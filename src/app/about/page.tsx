@@ -64,7 +64,7 @@ export default function AboutPage() {
           {/* About Content */}
           <div>
             <h2 className="text-3xl font-semibold mb-6 text-gray-800">
-              Hello, I'm Eric Kabogo
+              Hello, I&apos;m Eric Kabogo
             </h2>
             
             <div className="space-y-6 text-gray-600">
