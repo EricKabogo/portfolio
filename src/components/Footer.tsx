@@ -12,7 +12,7 @@ export default function Footer() {
         {/* Social Links */}
         <div className="flex space-x-6">
           <Link 
-            href="https://github.com/yourusername" 
+            href="https://github.com/EricKabogo" 
             target="_blank" 
             className="hover:text-gray-300 transition-colors flex items-center"
           >
@@ -29,7 +29,7 @@ export default function Footer() {
           </Link>
           
           <Link 
-            href="https://linkedin.com/in/yourusername" 
+            href="https://www.linkedin.com/in/erickabogo/" 
             target="_blank" 
             className="hover:text-gray-300 transition-colors flex items-center"
           >
