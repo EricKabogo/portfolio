@@ -1,17 +1,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import projects, { Project } from '@/lib/ProjectData';
+import PersonalProjects, { Project } from '@/lib/PersonalProjects';
 
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen bg-gray-100 py-12 px-4">
+    <div className=" bg-gray-100 py-12 px-4">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-4xl font-bold text-center mb-12 text-[#002270]">
-          My Projects
+          Projects
         </h1>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project: Project) => (
+          {PersonalProjects.map((project: Project) => (
             <div 
               key={project.id} 
               className="bg-white shadow-lg rounded-xl overflow-hidden 
