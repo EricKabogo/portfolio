@@ -69,7 +69,7 @@ export default function AboutPage() {
             
             <div className="space-y-6 text-gray-600">
               <p>
-                I'm a software developer with a passion for building 
+                I am a software developer with a passion for building 
                 scalable web applications. With a strong background in 
                 full-stack development, I love turning complex problems 
                 into elegant, user-friendly solutions.
