@@ -47,7 +47,7 @@ export interface Project {
       title: "Financial Dashboard",
       description: "A simplified financial dashboard that has CRUD functionalities.",
       technologies: ["Next.js", "TypeScript", "React", "PostgreSQL",],
-      githubLink: "https://github.com/yourusername/ecommerce",
+      // githubLink: "https://github.com/yourusername/ecommerce",
       // liveLink: "https://your-ecommerce-site.com",
       imageUrl: "/projects/ecommerce.png"
     }
