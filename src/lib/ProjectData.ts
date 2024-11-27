@@ -15,7 +15,7 @@ export interface Project {
       description: "Responsive personal portfolio built with Next.js and Tailwind CSS.",
       technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
       githubLink: "https://github.com/EricKabogo/portfolio",
-      liveLink: "https://your-ecommerce-site.com",
+      liveLink: "https://portfolio-sigma-eight-24.vercel.app/",
       imageUrl: "/portfolio.png"
     },
     {
@@ -25,8 +25,16 @@ export interface Project {
       technologies: ["HTML", "CSS"],
       githubLink: "https://github.com/EricKabogo/Menu-Page",
       imageUrl: "/projects/ecommerce.png"
+    },
+    {
+      id: 3,
+      title: "Financial Dashboard",
+      description: "A simplified financial dashboard that has a public home page, a login page, dashboard pages that are protected by authentication and the ability for users to add, edit, and delete invoices.",
+      technologies: ["Next.js", "TypeScript", "React", "PostgreSQL",],
+      githubLink: "https://github.com/yourusername/ecommerce",
+      liveLink: "https://your-ecommerce-site.com",
+      imageUrl: "/projects/ecommerce.png"
     }
-    // Add more projects here
   ];
-  
+
   export default projects;
