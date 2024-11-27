@@ -35,7 +35,7 @@ export default function Home() {
         {/* Hero Content */}
         <div className="text-center md:text-left">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
-            Hi, I'm Eric Kabogo
+            Hi, I&apos;m Eric Kabogo
           </h1>
           <p className="text-xl text-gray-600 mb-6">
             Software Developer | Tech Enthusiast | Problem Solver
