@@ -12,15 +12,15 @@ export default function ProjectsPage() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {PersonalProjects.map((project: Project) => (
-            <div 
-              key={project.id} 
-              className="bg-white shadow-lg rounded-xl overflow-hidden 
+            <div
+              key={project.id}
+              className="bg-white shadow-lg rounded-xl overflow-hidden
               transition-transform transform hover:scale-105 hover:shadow-xl"
             >
               {/* Project Image */}
               <div className="relative w-full h-48">
-                <Image 
-                  src={project.imageUrl} 
+                <Image
+                  src={project.imageUrl}
                   alt={project.title}
                   fill
                   className="object-cover"
