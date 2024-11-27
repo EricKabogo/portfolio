@@ -6,7 +6,7 @@ export default function ProjectsPage() {
   return (
     <div className="min-h-screen bg-gray-100 py-12 px-4">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-12 text-gray-800">
+        <h1 className="text-4xl font-bold text-center mb-12 text-[#002270]">
           My Projects
         </h1>
 

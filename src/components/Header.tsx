@@ -13,10 +13,10 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-blue-500 text-white p-4">
-      <nav className="flex justify-between items-center max-w-6xl mx-auto">
+    <header className="bg-white text-black p-4">
+      <nav className="flex justify-between items-center max-w-6xl mx-auto py-2">
         <Link href="/" className="text-2xl font-bold">
-          Eric Kabogo
+          Eric Maina Kabogo
         </Link>
 
         {/* Mobile Menu Toggle */}
@@ -35,7 +35,7 @@ export default function Header() {
             <li key={item.href}>
               <Link 
                 href={item.href} 
-                className="hover:text-blue-400 transition-colors"
+                className="font-bold hover:text-gray-300 transition-colors"
               >
                 {item.label}
               </Link>
