@@ -1,17 +1,34 @@
 import Image from 'next/image';
 import PersonalProjects from '@/lib/PersonalProjects';
 
-const skills = [
-  'TypeScript',
-  'React',
-  'Next.js',
-  'Node.js',
-  'Nest.js',
-  'Tailwind CSS',
-  'Python',
-  'Git',
-  'Database management',
-  'ClickUp',
+const skillGroups = [
+  {
+    title: 'Frontend',
+    skills: [
+      'React.js',
+      'Next.js',
+      'TypeScript',
+      'JavaScript (ES6+)',
+      'HTML5',
+      'CSS3',
+      'Tailwind CSS',
+      'Responsive design',
+      'SEO',
+      'Accessibility standards',
+    ],
+  },
+  {
+    title: 'Backend & APIs',
+    skills: ['REST APIs', 'Node.js', 'Nest.js', 'API integration & consumption'],
+  },
+  {
+    title: 'Databases & platforms',
+    skills: ['PostgreSQL', 'MongoDB', 'Firebase', 'Supabase', 'Azure B2C', 'Strapi CMS'],
+  },
+  {
+    title: 'Other tools',
+    skills: ['Python', 'Git', 'ClickUp'],
+  },
 ];
 
 const contacts = [
@@ -165,19 +182,28 @@ export default function Home() {
               applications. With a strong background in full-stack development, I
               love turning complex problems into elegant, user-friendly solutions.
             </p>
-            <h3 className="mb-4 mt-10 text-sm font-medium uppercase tracking-wide text-muted">
-              Tools I work with
+            <h3 className="mb-6 mt-10 text-sm font-medium uppercase tracking-wide text-muted">
+              Skills
             </h3>
-            <ul className="flex flex-wrap gap-2">
-              {skills.map((skill) => (
-                <li
-                  key={skill}
-                  className="rounded-full border border-border bg-surface px-3 py-1 text-sm"
-                >
-                  {skill}
-                </li>
+            <dl className="space-y-6">
+              {skillGroups.map((group) => (
+                <div key={group.title}>
+                  <dt className="mb-3 font-medium">{group.title}</dt>
+                  <dd>
+                    <ul className="flex flex-wrap gap-2">
+                      {group.skills.map((skill) => (
+                        <li
+                          key={skill}
+                          className="rounded-full border border-border bg-surface px-3 py-1 text-sm"
+                        >
+                          {skill}
+                        </li>
+                      ))}
+                    </ul>
+                  </dd>
+                </div>
               ))}
-            </ul>
+            </dl>
           </div>
         </div>
       </section>
