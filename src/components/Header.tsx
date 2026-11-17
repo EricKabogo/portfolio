@@ -1,75 +1,79 @@
-'use client'
+'use client';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import ThemeToggle from './ThemeToggle';
 
 const navItems = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/#work', label: 'Work' },
+  { href: '/#about', label: 'About' },
+  { href: '/#contact', label: 'Contact' },
 ];
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
-
-  const linkClass = (href: string) =>
-    `font-semibold transition-colors hover:text-blue-600 ${
-      pathname === href ? 'text-blue-600' : 'text-gray-800'
-    }`;
 
   return (
-    <header className="relative bg-white border-b border-gray-200 p-4">
-      <nav className="flex justify-between items-center max-w-6xl mx-auto py-2">
-        <Link href="/" className="text-2xl font-bold text-gray-900">
+    <header className="sticky top-0 z-30 border-b border-border bg-bg/80 backdrop-blur-md">
+      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+        <Link href="/" className="font-semibold tracking-tight">
           Eric Kabogo
         </Link>
 
-        {/* Mobile Menu Toggle */}
-        <button
-          type="button"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-expanded={isOpen}
-          aria-controls="mobile-nav"
-          className="md:hidden font-semibold text-gray-800 rounded px-2 py-1"
-        >
-          {isOpen ? 'Close' : 'Menu'}
-        </button>
-
-        {/* Desktop Navigation */}
-        <ul className="hidden md:flex space-x-6">
-          {navItems.map((item) => (
-            <li key={item.href}>
-              <Link
-                href={item.href}
-                className={linkClass(item.href)}
-                aria-current={pathname === item.href ? 'page' : undefined}
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-
-      {/* Mobile Navigation */}
-      {isOpen && (
-        <div
-          id="mobile-nav"
-          className="absolute top-full left-0 z-20 w-full bg-white border-b border-gray-200 shadow-md md:hidden"
-        >
-          <ul className="flex flex-col items-center space-y-4 py-4">
+        <div className="flex items-center gap-2 md:gap-8">
+          <ul className="hidden items-center gap-8 md:flex">
             {navItems.map((item) => (
               <li key={item.href}>
-                <Link
+                <a
                   href={item.href}
-                  className={linkClass(item.href)}
-                  aria-current={pathname === item.href ? 'page' : undefined}
-                  onClick={() => setIsOpen(false)}
+                  className="text-sm text-muted transition-colors hover:text-fg"
                 >
                   {item.label}
-                </Link>
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <ThemeToggle />
+
+          <button
+            type="button"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-expanded={isOpen}
+            aria-controls="mobile-nav"
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            className="grid h-9 w-9 place-items-center rounded-full border border-border md:hidden"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              className="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              aria-hidden="true"
+            >
+              {isOpen ? (
+                <path d="M6 6l12 12M18 6 6 18" />
+              ) : (
+                <path d="M4 7h16M4 12h16M4 17h16" />
+              )}
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      {isOpen && (
+        <div id="mobile-nav" className="border-t border-border bg-bg md:hidden">
+          <ul className="mx-auto flex max-w-6xl flex-col px-4 py-2">
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <a
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className="block py-3 text-lg"
+                >
+                  {item.label}
+                </a>
               </li>
             ))}
           </ul>

@@ -1,29 +1,24 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
+const geistSans = Geist({
+  subsets: ["latin"],
   variable: "--font-geist-sans",
-  weight: "100 900",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
   variable: "--font-geist-mono",
-  weight: "100 900",
 });
 
 const description =
-  "Eric Kabogo is a full-stack developer in Nairobi, Kenya, building web products such as ChamaHub, Carhoot and Akira Care.";
+  "Eric Kabogo is a full-stack developer in Nairobi, Kenya, who designs and builds web applications end to end.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://portfolio-sigma-eight-24.vercel.app"),
-  title: {
-    default: "Eric Kabogo · Full-stack developer",
-    template: "%s · Eric Kabogo",
-  },
+  title: "Eric Kabogo · Full-stack developer",
   description,
   openGraph: {
     title: "Eric Kabogo · Full-stack developer",
@@ -32,7 +27,11 @@ export const metadata: Metadata = {
     siteName: "Eric Kabogo",
     type: "website",
   },
+  twitter: { card: "summary_large_image" },
 };
+
+// Applies a saved theme choice before paint so the page doesn't flash.
+const themeScript = `try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}`;
 
 export default function RootLayout({
   children,
@@ -40,14 +39,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
+      <body className="antialiased">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-surface focus:px-4 focus:py-2"
+        >
+          Skip to content
+        </a>
         <Header />
-        <main className="min-h-screen">
-          {children}
-        </main>
+        <main id="main">{children}</main>
         <Footer />
       </body>
     </html>
