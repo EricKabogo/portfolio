@@ -1,12 +1,15 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import PersonalProjects, { Project } from '@/lib/PersonalProjects';
 
+export const metadata: Metadata = { title: 'Projects' };
+
 export default function ProjectsPage() {
   return (
-    <div className=" bg-gray-100 py-12 px-4">
+    <div className="py-12 px-4">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-12 text-[#002270]">
+        <h1 className="text-4xl font-bold text-center mb-12 text-gray-800">
           Projects
         </h1>
 
@@ -15,15 +18,16 @@ export default function ProjectsPage() {
             <div
               key={project.id}
               className="bg-white shadow-lg rounded-xl overflow-hidden
-              transition-transform transform hover:scale-105 hover:shadow-xl"
+              transition-shadow hover:shadow-xl"
             >
               {/* Project Image */}
               <div className="relative w-full h-48">
                 <Image
                   src={project.imageUrl}
-                  alt={project.title}
+                  alt={`Screenshot of ${project.title}`}
                   fill
-                  className="object-cover"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover object-top"
                 />
               </div>
 
@@ -55,6 +59,7 @@ export default function ProjectsPage() {
                     <Link 
                       href={project.githubLink} 
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="bg-gray-800 text-white 
                       px-4 py-2 rounded-lg hover:bg-gray-700 
                       transition-colors"
@@ -66,6 +71,7 @@ export default function ProjectsPage() {
                     <Link 
                       href={project.liveLink} 
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="border-2 border-blue-600 
                       text-blue-600 px-4 py-2 rounded-lg 
                       hover:bg-blue-50 transition-colors"

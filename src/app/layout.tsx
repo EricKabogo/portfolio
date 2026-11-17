@@ -15,9 +15,23 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+const description =
+  "Eric Kabogo is a full-stack developer in Nairobi, Kenya, building web products such as ChamaHub, Carhoot and Akira Care.";
+
 export const metadata: Metadata = {
-  title: "Eric Kabogo's Portfolio",
-  description: "Created by Eric",
+  metadataBase: new URL("https://portfolio-sigma-eight-24.vercel.app"),
+  title: {
+    default: "Eric Kabogo · Full-stack developer",
+    template: "%s · Eric Kabogo",
+  },
+  description,
+  openGraph: {
+    title: "Eric Kabogo · Full-stack developer",
+    description,
+    url: "/",
+    siteName: "Eric Kabogo",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

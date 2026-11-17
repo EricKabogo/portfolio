@@ -19,13 +19,13 @@ const ArrowRightIcon = () => (
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+    <section className="min-h-[calc(100vh-10rem)] flex items-center justify-center px-4 py-16">
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12">
         {/* Profile Image */}
         <div className="w-64 h-64 relative">
           <Image 
             src="/profile.jpg" 
-            alt="My Profile" 
+            alt="Portrait of Eric Kabogo" 
             fill
             className="rounded-full object-cover"
             priority
@@ -37,8 +37,13 @@ export default function Home() {
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
             Hi, I&apos;m Eric Kabogo
           </h1>
-          <p className="text-xl text-gray-600 mb-6">
-            Software Developer | Tech Enthusiast | Problem Solver
+          <p className="text-sm font-semibold uppercase tracking-wide text-blue-600 mb-3">
+            Full-stack developer · Nairobi, Kenya
+          </p>
+          <p className="text-xl text-gray-600 mb-8 max-w-xl">
+            I build web products for Kenyan businesses, from a savings-group
+            ledger with M-Pesa payments to a car marketplace and a clinic
+            booking site.
           </p>
           
           <div className="flex flex-col md:flex-row gap-4">
@@ -62,6 +67,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </main>
+    </section>
   );
 }

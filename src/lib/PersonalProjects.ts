@@ -1,64 +1,41 @@
 export interface Project {
-    id: number;
-    title: string;
-    description: string;
-    technologies: string[];
-    githubLink?: string;
-    liveLink?: string;
-    imageUrl: string;
-  }
-  
-  const PersonalProjects: Project[] = [
-    {
-      id: 1,
-      title: "Portfolio Website",
-      description: "Responsive personal portfolio built with Next.js and Tailwind CSS.",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-      githubLink: "https://github.com/EricKabogo/portfolio",
-      liveLink: "https://portfolio-sigma-eight-24.vercel.app/",
-      imageUrl: "/portfolio.png"
-    },
-    {
-      id: 2,
-      title: "Carhoot App",
-      description: "A responsive site that makes the process of finding a new car easier",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Strapi CMS"],
-      liveLink: "https://carhoot.app",
-      imageUrl: "/carhoot.png"
-    },
-    {
-      id: 3,
-      title: "Akira Care",
-      description: "A responsive site that makes the process of finding and booking appointments with a doctor easier.",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Strapi CMS"],
-      liveLink: "https://akiracare.ke",
-      imageUrl: "/akira.png"
-    },
-    {
-      id: 4,
-      title: "Hotel Menu Website",
-      description: "A simple menu page displaying a list of products, their descriptions and prices.",
-      technologies: ["HTML", "CSS"],
-      githubLink: "https://github.com/EricKabogo/Menu-Page",
-      imageUrl: "/menu-page.png"
-    },
-    {
-      id: 5,
-      title: "Financial Dashboard",
-      description: "A simplified financial dashboard that has CRUD functionalities.",
-      technologies: ["Next.js", "TypeScript", "React", "PostgreSQL",],
-      // githubLink: "https://github.com/yourusername/ecommerce",
-      // liveLink: "https://your-ecommerce-site.com",
-      imageUrl: "/projects/ecommerce.png"
-    },
-    {
-      id: 6,
-      title: "ChamaHub",
-      description: "A shared ledger for chamas that records contributions, loans and payouts, with M-Pesa payments and two-official approval before money leaves.",
-      technologies: ["Next.js", "TypeScript", "M-Pesa"],
-      liveLink: "https://chamahub-topaz.vercel.app/",
-      imageUrl: "/chamahub.png"
-    }
-  ];
+  id: number;
+  title: string;
+  description: string;
+  technologies: string[];
+  githubLink?: string;
+  liveLink?: string;
+  imageUrl: string;
+}
 
-  export default PersonalProjects;
+const PersonalProjects: Project[] = [
+  {
+    id: 1,
+    title: "ChamaHub",
+    description:
+      "A shared ledger for chamas (savings groups) that records contributions, loans and payouts. Members pay by M-Pesa, and money only leaves when two officials approve.",
+    technologies: ["Next.js", "TypeScript", "M-Pesa"],
+    liveLink: "https://chamahub-topaz.vercel.app/",
+    imageUrl: "/chamahub.png",
+  },
+  {
+    id: 2,
+    title: "Carhoot App",
+    description:
+      "A marketplace for buying and selling cars in Kenya, with local and import listings searchable by make and model.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Strapi CMS"],
+    liveLink: "https://carhoot.app",
+    imageUrl: "/carhoot.png",
+  },
+  {
+    id: 3,
+    title: "Akira Care",
+    description:
+      "The website for a family wellness practice in Nairobi, where patients browse services and care programmes and book appointments.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Strapi CMS"],
+    liveLink: "https://akiracare.ke",
+    imageUrl: "/akira.png",
+  },
+];
+
+export default PersonalProjects;
