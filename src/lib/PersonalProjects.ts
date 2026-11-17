@@ -50,6 +50,14 @@ export interface Project {
       // githubLink: "https://github.com/yourusername/ecommerce",
       // liveLink: "https://your-ecommerce-site.com",
       imageUrl: "/projects/ecommerce.png"
+    },
+    {
+      id: 6,
+      title: "ChamaHub",
+      description: "A shared ledger for chamas that records contributions, loans and payouts, with M-Pesa payments and two-official approval before money leaves.",
+      technologies: ["Next.js", "TypeScript", "M-Pesa"],
+      liveLink: "https://chamahub-topaz.vercel.app/",
+      imageUrl: "/chamahub.png"
     }
   ];
 
