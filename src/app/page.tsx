@@ -41,9 +41,8 @@ export default function Home() {
             Full-stack developer · Nairobi, Kenya
           </p>
           <p className="text-xl text-gray-600 mb-8 max-w-xl">
-            I build web products for Kenyan businesses, from a savings-group
-            ledger with M-Pesa payments to a car marketplace and a clinic
-            booking site.
+            I design and build web applications end to end, from the
+            database and APIs to the interface people use every day.
           </p>
           
           <div className="flex flex-col md:flex-row gap-4">
